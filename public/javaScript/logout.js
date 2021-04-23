@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 async function logout() {
     const response = await fetch('/api/users/logout', {
         method: 'post',
@@ -7,7 +5,7 @@ async function logout() {
     });
 
     if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/login');
     } else {
         alert(response.statusText);
     }
