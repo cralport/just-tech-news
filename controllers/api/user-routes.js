@@ -79,6 +79,7 @@ router.post('/', (req, res) => {
 });
 
 router.post('/login', (req, res) => {
+    console.log("work damnit");
     //expects {email: 'lernantino@gmail.com', password: 'password1234'}
     User.findOne({
         where: {
@@ -153,12 +154,15 @@ router.delete('/:id', (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
+    
     if (req.session.loggedIn) {
+        console.log('kdfs;fj');
         req.session.destroy(() => {
             res.status(204).end();
         });
     }
     else {
+        console.log('oifioneiovie');
         res.status(404).end();
     }
 });
